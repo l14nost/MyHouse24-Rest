@@ -78,10 +78,10 @@ public class JwtService {
                 .parseClaimsJws(token)
                 .getBody();
     }
-
-
     public Key getSignInKey() {
         byte[] keyBytes = Decoders.BASE64.decode(secreteKey);
         return Keys.hmacShaKeyFor(keyBytes);
     }
+
+
 }

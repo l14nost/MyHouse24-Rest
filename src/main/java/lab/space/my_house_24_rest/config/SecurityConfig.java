@@ -44,7 +44,7 @@ public class SecurityConfig {
                         "/login/**")
                 .permitAll()
                 .anyRequest()
-                .authenticated()
+                .hasAuthority("ACTIVE")
                 )
                 .httpBasic( httpSecurityHttpBasicConfigurer -> httpSecurityHttpBasicConfigurer.authenticationEntryPoint(authenticationEntryPoint))
                 .sessionManagement(

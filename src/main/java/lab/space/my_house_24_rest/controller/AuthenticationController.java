@@ -1,4 +1,4 @@
-package lab.space.my_house_24_rest.controller.auth;
+package lab.space.my_house_24_rest.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
