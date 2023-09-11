@@ -82,9 +82,6 @@ public class User implements UserDetails {
     private List<Apartment> apartmentList = new ArrayList<>();
 
     @OneToMany(mappedBy = "user")
-    private List<CashBox> cashBoxList = new ArrayList<>();
-
-    @OneToMany(mappedBy = "user")
     private List<MastersApplication> applicationList = new ArrayList<>();
 
     @ManyToMany(mappedBy = "users",cascade = {CascadeType.PERSIST, CascadeType.MERGE})
