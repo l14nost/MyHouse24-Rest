@@ -4,6 +4,7 @@ import lab.space.my_house_24_rest.entity.User;
 import lab.space.my_house_24_rest.repository.UserRepository;
 import lab.space.my_house_24_rest.service.UserService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;

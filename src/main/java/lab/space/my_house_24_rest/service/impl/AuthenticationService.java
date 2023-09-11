@@ -11,6 +11,7 @@ import lab.space.my_house_24_rest.enums.TokenType;
 import lab.space.my_house_24_rest.repository.TokenRepo;
 import lab.space.my_house_24_rest.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
