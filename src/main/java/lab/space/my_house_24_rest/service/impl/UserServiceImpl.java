@@ -1,11 +1,11 @@
 package lab.space.my_house_24_rest.service.impl;
 
 import jakarta.persistence.EntityNotFoundException;
+import lab.space.my_house_24_rest.config.JwtService;
 import lab.space.my_house_24_rest.entity.Token;
 import lab.space.my_house_24_rest.entity.User;
 import lab.space.my_house_24_rest.enums.TokenType;
 import lab.space.my_house_24_rest.mapper.UserMapper;
-import lab.space.my_house_24_rest.model.auth.AuthenticationRequest;
 import lab.space.my_house_24_rest.model.auth.AuthenticationResponse;
 import lab.space.my_house_24_rest.model.user.UserResponseForProfile;
 import lab.space.my_house_24_rest.repository.TokenRepo;
@@ -14,16 +14,12 @@ import lab.space.my_house_24_rest.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor

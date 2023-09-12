@@ -7,6 +7,7 @@ import lab.space.my_house_24_rest.model.message.MessageResponse;
 import lab.space.my_house_24_rest.model.message.MessageResponseForCard;
 import lab.space.my_house_24_rest.repository.MessageRepository;
 import lab.space.my_house_24_rest.service.MessageService;
+import lab.space.my_house_24_rest.service.UserService;
 import lab.space.my_house_24_rest.specification.MessageSpecification;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,7 +20,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class MessageServiceImpl implements MessageService {
     private final MessageRepository messageRepository;
-    private final UserServiceImpl userService;
+    private final UserService userService;
     @Override
     public Page<MessageResponse> findAllForMain(Integer page) {
         log.info("Try to get message for main page");
@@ -40,9 +41,6 @@ public class MessageServiceImpl implements MessageService {
         if (!message.getIsCheck()){
             message.setIsCheck(true);
             messageRepository.save(message);
-        }
-        else {
-            log.info("Message already check");
         }
     }
 

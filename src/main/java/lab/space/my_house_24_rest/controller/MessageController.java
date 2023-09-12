@@ -32,7 +32,7 @@ public class MessageController {
             @ApiResponse(responseCode = "401",description = "Unauthorized")
     })
     @PostMapping("/get-all-messages")
-    public ResponseEntity profilePage(@RequestParam Integer page){
+    public ResponseEntity getAllMessages(@RequestParam Integer page){
         return ResponseEntity.ok(messageService.findAllForMain(page));
     }
     @Operation(summary = "Message card")

@@ -24,7 +24,7 @@ public class StatisticsController {
             @ApiResponse(responseCode = "401",description = "Unauthorized")
     })
     @GetMapping("/get-statistics")
-    public ResponseEntity getMessageForCard(){
+    public ResponseEntity getStatistics(){
        try {
            return ResponseEntity.ok(statisticService.balanceForStatistic());
        }

@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import lab.space.my_house_24_rest.model.auth.AuthenticationRequest;
 import lab.space.my_house_24_rest.model.auth.AuthenticationResponse;
 import lab.space.my_house_24_rest.service.impl.AuthenticationService;
+import lab.space.my_house_24_rest.service.impl.LogoutService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;

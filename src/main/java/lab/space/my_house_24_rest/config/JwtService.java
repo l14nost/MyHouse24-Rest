@@ -1,4 +1,4 @@
-package lab.space.my_house_24_rest.service.impl;
+package lab.space.my_house_24_rest.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
