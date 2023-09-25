@@ -65,9 +65,6 @@ public class User implements UserDetails {
     @Column(nullable = false)
     private Instant addDate;
 
-    @Column(nullable = false)
-    private Boolean duty;
-
     @Column
     private Boolean theme;
 
