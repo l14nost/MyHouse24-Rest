@@ -7,7 +7,7 @@ spring:
   application:
     name: My_House_24_Rest
   datasource:
-    url: 'jdbc:mysql://localhost:3306/my_house_24'
+    url: 'jdbc:mysql://myhouse24-db:3306/myhouse24'
     username: 'user'
     password: 'user'
     driver-class-name: com.mysql.cj.jdbc.Driver
