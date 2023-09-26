@@ -1,0 +1,26 @@
+name: Build & Deploy MyHouse24-Rest
+
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  build-deploy:
+    name: Build & Deploy MyHouse24-Rest
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'corretto'
+          java-version: 17
+
+      - name: Package and Build
+        run: |
+          mvn clean 
+          mvn -B package --file pom.xml
