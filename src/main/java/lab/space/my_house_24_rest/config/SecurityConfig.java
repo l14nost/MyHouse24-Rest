@@ -41,7 +41,8 @@ public class SecurityConfig {
                         "/webjars/**",
                         "/swagger-ui.html",
                         "/uploads/**",
-                        "/login/**")
+                        "/login/**",
+                        "/")
                 .permitAll()
                 .anyRequest()
                 .hasAuthority("ACTIVE")
