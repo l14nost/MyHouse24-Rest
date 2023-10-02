@@ -20,7 +20,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
         servers = {
                 @Server(
                         description = "MyHouse24",
-                        url = "http://localhost:8083/rest"
+                        url = "http://localhost:8083/myhouse24-amirb-nikitaf/rest"
                 ),
 
         },
