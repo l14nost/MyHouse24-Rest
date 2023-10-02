@@ -11,16 +11,12 @@ import io.swagger.v3.oas.annotations.servers.Server;
 
 @OpenAPIDefinition(
         info = @Info(
-                contact = @Contact(
-                        name = "li4nost",
-                        email = "amirbanor@gmail.com"
-                ),
                 description = "OpenApi documentation for MyHouse24"
         ),
         servers = {
                 @Server(
                         description = "MyHouse24",
-                        url = "http://localhost:8083/myhouse24-amirb-nikitaf/rest"
+                        url = "http://slj.avada-media-dev1.od.ua:9083/myhouse24-amirb-nikitaf/rest"
                 ),
 
         },
