@@ -1,6 +1,6 @@
 server:
   servlet:
-    context-path: /myhouse24-amirb-nikitaf/rest
+    context-path: /myhouse24-amirb-nikitaf/api/v1
   port: 8083
 
 spring:

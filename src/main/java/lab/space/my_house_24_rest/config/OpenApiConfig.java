@@ -16,7 +16,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
         servers = {
                 @Server(
                         description = "MyHouse24",
-                        url = "http://slj.avada-media-dev1.od.ua:9083/myhouse24-amirb-nikitaf/rest"
+                        url = "https://slj.avada-media-dev1.od.ua/myhouse24-amirb-nikitaf/api/v1"
                 ),
 
         },
