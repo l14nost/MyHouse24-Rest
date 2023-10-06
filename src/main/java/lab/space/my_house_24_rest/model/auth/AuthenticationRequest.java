@@ -13,6 +13,6 @@ import lombok.NoArgsConstructor;
 public class AuthenticationRequest {
     @Schema(example = "admin@gmail.com")
     private String login;
-    @Schema(example = "pass")
+    @Schema(example = "admin")
     private String password;
 }
