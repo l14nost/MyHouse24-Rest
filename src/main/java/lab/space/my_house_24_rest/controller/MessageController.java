@@ -5,6 +5,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
@@ -25,7 +26,9 @@ public class MessageController {
     private final MessageService messageService;
 
 
-    @Operation(summary = "Messages")
+    @Operation(summary = "Messages", security = {
+            @SecurityRequirement(name = "bearerAuth")
+    })
     @ApiResponses({
             @ApiResponse(responseCode = "200",description = "OK"),
             @ApiResponse(responseCode = "400",description = "Bad Request"),
@@ -35,7 +38,9 @@ public class MessageController {
     public ResponseEntity getAllMessages(@RequestParam Integer page){
         return ResponseEntity.ok(messageService.findAllForMain(page));
     }
-    @Operation(summary = "Message card")
+    @Operation(summary = "Message card", security = {
+            @SecurityRequirement(name = "bearerAuth")
+    })
     @ApiResponses({
             @ApiResponse(responseCode = "200",description = "OK"),
             @ApiResponse(responseCode = "400",description = "Bad Request"),

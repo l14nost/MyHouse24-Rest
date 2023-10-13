@@ -5,6 +5,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
@@ -26,7 +27,9 @@ public class ProfileController {
     private final UserValidator userValidator;
 
 
-    @Operation(summary = "Profile")
+    @Operation(summary = "Profile", security = {
+            @SecurityRequirement(name = "bearerAuth")
+    })
     @ApiResponses({
             @ApiResponse(responseCode = "200",description = "OK",content = @Content(
                     mediaType = "application/json",
@@ -67,7 +70,9 @@ public class ProfileController {
         }
 
     }
-    @Operation(summary = "Edit email")
+    @Operation(summary = "Edit email", security = {
+            @SecurityRequirement(name = "bearerAuth")
+    })
     @ApiResponses({
             @ApiResponse(responseCode = "200",description = "OK"),
             @ApiResponse(responseCode = "400",description = "Bad Request"),

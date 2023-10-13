@@ -3,6 +3,7 @@ package lab.space.my_house_24_rest.controller;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.persistence.EntityNotFoundException;
 import lab.space.my_house_24_rest.service.MessageService;
@@ -17,7 +18,9 @@ import org.springframework.web.bind.annotation.*;
 public class StatisticsController {
     private final StatisticService statisticService;
 
-    @Operation(summary = "Statistics")
+    @Operation(summary = "Statistics", security = {
+            @SecurityRequirement(name = "bearerAuth")
+    })
     @ApiResponses({
             @ApiResponse(responseCode = "200",description = "OK"),
             @ApiResponse(responseCode = "400",description = "Bad Request"),

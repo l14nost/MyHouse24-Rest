@@ -3,6 +3,7 @@ package lab.space.my_house_24_rest.controller;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -26,11 +27,17 @@ public class AuthenticationController {
     private final AuthenticationService authenticationService;
     @Operation(summary = "Authenticate")
     @PostMapping("/authenticate")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200",description = "OK"),
+            @ApiResponse(responseCode = "400",description = "Bad Request")
+    })
     public ResponseEntity<AuthenticationResponse> authenticate(@RequestBody AuthenticationRequest request){
         return ResponseEntity.ok(authenticationService.authenticate(request));
 
     }
-    @Operation(summary = "Logout")
+    @Operation(summary = "Logout", security = {
+            @SecurityRequirement(name = "bearerAuth")
+    })
     @ApiResponses({
             @ApiResponse(responseCode = "200",description = "OK"),
             @ApiResponse(responseCode = "400",description = "Bad Request"),
@@ -41,8 +48,15 @@ public class AuthenticationController {
         return ResponseEntity.ok("Success logout");
     }
 
-    @Operation(summary = "Refresh Token")
+    @Operation(summary = "Refresh Token", security = {
+            @SecurityRequirement(name = "bearerAuth")
+    })
     @PostMapping("/refresh-token")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200",description = "OK"),
+            @ApiResponse(responseCode = "400",description = "Bad Request"),
+            @ApiResponse(responseCode = "401",description = "Unauthorized")
+    })
     public ResponseEntity refresh(
             HttpServletRequest request,
             HttpServletResponse response
