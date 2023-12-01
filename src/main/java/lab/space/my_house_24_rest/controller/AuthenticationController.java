@@ -23,6 +23,7 @@ import java.io.IOException;
 @Tag(name = "Authenticate")
 @Slf4j
 public class AuthenticationController {
+
     private final AuthenticationService authenticationService;
     @Operation(summary = "Authenticate")
     @PostMapping("/authenticate")
